@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "labs",
+  "info": {
+    "singularName": "lab",
+    "pluralName": "labs",
+    "displayName": "Lab",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "labName": {
+      "type": "string",
+      "required": true
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case.case",
+      "mappedBy": "lab"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cases",
+  "info": {
+    "singularName": "case",
+    "pluralName": "cases",
+    "displayName": "Case",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "patientName": {
+      "type": "string",
+      "required": true
+    },
+    "material": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string"
+    },
+    "shade": {
+      "type": "string"
+    },
+    "units": {
+      "type": "json"
+    },
+    "finishDate": {
+      "type": "date",
+      "required": false
+    },
+    "doctor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::doctor.doctor",
+      "inversedBy": "cases"
+    },
+    "lab": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lab.lab",
+      "inversedBy": "cases"
+    }
+  }
+}
