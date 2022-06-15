@@ -33,16 +33,16 @@
       "type": "date",
       "required": false
     },
-    "doctor": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::doctor.doctor",
-      "inversedBy": "cases"
-    },
     "lab": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::lab.lab",
+      "inversedBy": "cases"
+    },
+    "doctor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::doctor.doctor",
       "inversedBy": "cases"
     }
   }

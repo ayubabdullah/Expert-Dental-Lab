@@ -8,17 +8,16 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "doctorName": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
-    "joinAt": {
-      "type": "date",
+    "phone": {
+      "type": "string",
       "required": true
     },
     "location": {
@@ -28,9 +27,8 @@
     "comeBy": {
       "type": "string"
     },
-    "phone": {
-      "type": "integer",
-      "unique": true
+    "joinAt": {
+      "type": "date"
     },
     "cases": {
       "type": "relation",
