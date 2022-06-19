@@ -218,14 +218,22 @@ const Cases = () => {
           url="/cases"
           tableHeaders={[
             "ID",
-            "Case Name",
-            "Phone Number",
-            "Location",
-            "Join At",
-            "Come By",
+            "Patient Name",
+            "Material",
+            "Type",
+            "Shade",
+            "Units",
+            "Doctor",
             "actions",
           ]}
-          tableRows={["doctorName", "phone", "location", "joinAt", "comeBy"]}
+          tableRows={[
+            "patientName",
+            "material",
+            "type",
+            "shade",
+            "units.lowerRight",
+            "doctor.data.attributes.doctorName",
+          ]}
           pagination={pagination}
           onSearchTermChange={onSearchTermChange}
           searchTerm={searchTerm}

@@ -1,6 +1,6 @@
 import React from "react";
 import { FiEdit } from "react-icons/fi";
-import {  MdDeleteOutline } from "react-icons/md";
+import { MdDeleteOutline } from "react-icons/md";
 import TableData from "./TableData";
 import TableHeadCell from "./TableHeadCell";
 import Pagination from "./Pagination";
@@ -24,6 +24,26 @@ const Table = ({
   });
   const renderRows = data.map((data) => {
     const renderRowData = tableRows.map((row) => {
+      const list = row.split(".");
+      if (list.length === 2) {
+        return (
+          <TableData key={row} title={data.attributes[list[0]][list[1]]} />
+        );
+      } else if (list.length === 3) {
+        return (
+          <TableData
+            key={row}
+            title={data.attributes[list[0]][list[1]][list[2]]}
+          />
+        );
+      } else if (list.length === 4) {
+        return (
+          <TableData
+            key={row}
+            title={data.attributes[list[0]][list[1]][list[2]][list[3]]}
+          />
+        );
+      }
       return <TableData key={row} title={data.attributes[row]} />;
     });
     return (

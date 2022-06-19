@@ -9,6 +9,7 @@ const initialState = {
       page: 1,
     },
     sort: ["createdAt:desc"],
+    populate: "*"
   },
   status: "idle",
   error: null,
@@ -25,7 +26,6 @@ export const getCases = createAsyncThunk(
           Authorization: `Bearer ${TOKEN}`,
         },
       });
-
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
